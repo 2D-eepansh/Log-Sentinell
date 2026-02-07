@@ -72,6 +72,9 @@ data/
 .DS_Store
 Thumbs.db
 
+# Security keys
+*.pem
+
 # Frontend allowlist (override root ignores)
 !frontend/log-sentinel/package.json
 !frontend/log-sentinel/package-lock.json

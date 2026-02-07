@@ -44,6 +44,89 @@ npm install
 npm run dev
 ```
 
+## Deploy Backend on EC2 (Ubuntu)
+
+### 1) SSH to instance
+
+```
+ssh -i log-sentinel-key.pem ubuntu@<EC2_PUBLIC_IP>
+```
+
+If permissions fail:
+
+```
+chmod 400 log-sentinel-key.pem
+```
+
+### 2) System setup
+
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y python3-pip python3-venv git curl
+```
+
+### 3) Clone repo
+
+```
+git clone https://github.com/2D-eepansh/Log-Sentinell.git
+cd Log-Sentinell
+```
+
+### 4) Backend env + deps
+
+```
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+If torch install fails:
+
+```
+pip install torch --index-url https://download.pytorch.org/whl/cpu
+```
+
+### 5) Model config
+
+Create backend/.env:
+
+```
+USE_LORA=false
+MODEL_PATH=./models/tiny-gpt2
+```
+
+### 6) Start backend
+
+```
+python -m backend.main --host 0.0.0.0 --port 8000
+```
+
+Verify from local machine:
+
+```
+curl http://<EC2_PUBLIC_IP>:8000/health
+```
+
+### 7) Connect Vercel frontend
+
+Set Vercel env var:
+
+```
+VITE_API_BASE_URL=http://<EC2_PUBLIC_IP>:8000
+```
+
+Redeploy the Vercel project.
+
+### Optional: run backend in tmux
+
+```
+sudo apt install -y tmux
+tmux new -s backend
+python -m backend.main --host 0.0.0.0 --port 8000
+```
+
 ## API Endpoints
 
 - GET /health
