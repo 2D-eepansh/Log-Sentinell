@@ -67,10 +67,17 @@ sample_logs/
 
 # Data
 data/
-*.csv
-*.json
-*.parquet
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Frontend allowlist (override root ignores)
+!frontend/log-sentinel/package.json
+!frontend/log-sentinel/package-lock.json
+!frontend/log-sentinel/tsconfig.json
+!frontend/log-sentinel/tsconfig.app.json
+!frontend/log-sentinel/tsconfig.node.json
+!frontend/log-sentinel/components.json
+!frontend/log-sentinel/src/lib/
+!frontend/log-sentinel/src/lib/**
