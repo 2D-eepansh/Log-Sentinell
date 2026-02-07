@@ -148,7 +148,7 @@ class IncidentExplanationService:
             summary="Incident explanation unavailable; fallback generated from known facts.",
             probable_causes=["unknown"],
             supporting_evidence=evidence,
-            confidence_score=0.0,
+            confidence_score=0.1,
             recommended_next_steps=["Validate incident scope and confirm if impact persists"],
             limitations="LLM output was invalid or unavailable; returned minimal factual summary.",
         )

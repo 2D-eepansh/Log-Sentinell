@@ -41,6 +41,7 @@ env/
 # Frontend
 frontend/log-sentinel/node_modules/
 frontend/log-sentinel/.git/
+frontend/log-sentinel/.env
 
 # Testing
 .pytest_cache/
