@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 215 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 12%;
+
+    --primary: 217 72% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 214 15% 93%;
+    --secondary-foreground: 215 25% 27%;
+
+    --muted: 214 15% 95%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 214 15% 91%;
+    --accent-foreground: 215 25% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 18% 88%;
+    --input: 214 18% 88%;
+    --ring: 217 72% 45%;
+
+    --radius: 0.375rem;
+
+    /* Severity tokens */
+    --severity-low: 142 64% 40%;
+    --severity-low-bg: 142 64% 95%;
+    --severity-medium: 38 92% 50%;
+    --severity-medium-bg: 38 92% 95%;
+    --severity-high: 0 72% 51%;
+    --severity-high-bg: 0 72% 95%;
+    --severity-critical: 0 84% 38%;
+    --severity-critical-bg: 0 84% 94%;
+
+    /* Surface tokens for engineering tool feel */
+    --surface-header: 215 28% 14%;
+    --surface-header-foreground: 210 20% 95%;
+    --surface-panel: 0 0% 100%;
+    --surface-elevated: 210 20% 99%;
+
+    /* Status tokens */
+    --status-success: 142 64% 40%;
+    --status-warning: 38 92% 50%;
+    --status-error: 0 72% 51%;
+    --status-info: 217 72% 45%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 28% 8%;
+    --foreground: 210 20% 92%;
+
+    --card: 215 25% 11%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 215 25% 11%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 217 72% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 20% 18%;
+    --secondary-foreground: 210 20% 80%;
+
+    --muted: 215 20% 16%;
+    --muted-foreground: 215 12% 55%;
+
+    --accent: 215 20% 20%;
+    --accent-foreground: 210 20% 92%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 217 72% 55%;
+
+    --severity-low-bg: 142 40% 14%;
+    --severity-medium-bg: 38 50% 14%;
+    --severity-high-bg: 0 50% 14%;
+    --severity-critical-bg: 0 60% 12%;
+
+    --surface-header: 215 28% 10%;
+    --surface-header-foreground: 210 20% 95%;
+    --surface-panel: 215 25% 11%;
+    --surface-elevated: 215 25% 13%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  code, .font-mono {
+    font-family: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  }
+}

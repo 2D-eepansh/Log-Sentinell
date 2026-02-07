@@ -1,0 +1,39 @@
+=== ERROR ===
+Traceback (most recent call last):
+  File "C:\Deepansh\Dev\Hackathons\Deriv\llm\inference\debug_compare_lora.py", line 160, in main
+    tokenizer, base_model = _load_base_model()
+                            ^^^^^^^^^^^^^^^^^^
+  File "C:\Deepansh\Dev\Hackathons\Deriv\llm\inference\debug_compare_lora.py", line 117, in _load_base_model
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deepansh\Dev\Hackathons\Deriv\.venv312\Lib\site-packages\transformers\models\auto\auto_factory.py", line 374, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deepansh\Dev\Hackathons\Deriv\.venv312\Lib\site-packages\transformers\modeling_utils.py", line 4063, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deepansh\Dev\Hackathons\Deriv\.venv312\Lib\site-packages\transformers\modeling_utils.py", line 4182, in _load_pretrained_model
+    loading_info, disk_offload_index = convert_and_load_state_dict_in_model(
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deepansh\Dev\Hackathons\Deriv\.venv312\Lib\site-packages\transformers\core_model_loading.py", line 1192, in convert_and_load_state_dict_in_model
+    realized_value = mapping.convert(
+                     ^^^^^^^^^^^^^^^^
+  File "C:\Deepansh\Dev\Hackathons\Deriv\.venv312\Lib\site-packages\transformers\core_model_loading.py", line 676, in convert
+    collected_tensors = self.quantization_operation.convert(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deepansh\Dev\Hackathons\Deriv\.venv312\Lib\site-packages\transformers\integrations\bitsandbytes.py", line 56, in convert
+    new_value = bnb.nn.Params4bit(value, requires_grad=False, **old_value.__dict__).to(value.device)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deepansh\Dev\Hackathons\Deriv\.venv312\Lib\site-packages\bitsandbytes\nn\modules.py", line 346, in to
+    return self._quantize(device)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deepansh\Dev\Hackathons\Deriv\.venv312\Lib\site-packages\bitsandbytes\nn\modules.py", line 301, in _quantize
+    w_4bit, quant_state = bnb.functional.quantize_4bit(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deepansh\Dev\Hackathons\Deriv\.venv312\Lib\site-packages\bitsandbytes\functional.py", line 871, in quantize_4bit
+    code = get_4bit_type(quant_type, device=A.device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deepansh\Dev\Hackathons\Deriv\.venv312\Lib\site-packages\bitsandbytes\functional.py", line 793, in get_4bit_type
+    data.div_(data.abs().max())
+              ^^^^^^^^^^
+KeyboardInterrupt

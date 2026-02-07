@@ -1,0 +1,18 @@
+base_model: mistralai/Mistral-7B-Instruct-v0.2
+quantization: qlora-4bit-nf4
+lora:
+  r: 8
+  alpha: 16
+  dropout: 0.05
+training:
+  epochs: 3
+  batch_size: 1
+  grad_accum: 8
+  learning_rate: 2e-4
+seed:
+  torch: 42
+  transformers: 42
+  numpy: 42
+hardware:
+  gpu: RTX 5070 Laptop (8GB)
+  os: Windows
